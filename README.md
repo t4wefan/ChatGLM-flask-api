@@ -25,4 +25,5 @@ get https://api.chat.t4wefan.pub/chatglm?msg=hello&usrid=0&source=0
 
 ## api的一些特殊用法
 - 当msg（正文部分）为clear时，清空当前usrid下的历史记录（记忆或者说上下文）
+- 当msg为ping时，将返回后端状态
 - 这个api可以用于koishi机器人的搭建
