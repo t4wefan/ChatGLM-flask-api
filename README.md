@@ -6,7 +6,7 @@
 - 为了满足一些应用场景的需要，我们定制了一个api（原作者尚不清楚，可能是ChatGPT），可以使用简单的get请求与ChatGLM对话。
 
 ## 如何使用api
-- 首先部署python环境（不多赘述）
+- 首先部署python环境，要求版本大于3.10
 - 克隆本仓库并转入本仓库的目录
 - 安装requirements.txt中的依赖
 pip install -r requirements.txt
@@ -27,3 +27,4 @@ get https://api.chat.t4wefan.pub/chatglm?msg=hello&usrid=0&source=0
 - 当msg（正文部分）为clear时，清空当前usrid下的历史记录（记忆或者说上下文）
 - 当msg为ping时，将返回后端状态
 - 这个api可以用于koishi机器人的搭建
+- 如果使用autodl算力平台，在安装完依赖后启动api_autodl.py即可在autodl的自定义服务中使用api
