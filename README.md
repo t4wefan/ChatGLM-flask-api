@@ -26,10 +26,12 @@ GET https://api.chat.t4wefan.pub/chatglm?msg=hello&usrid=0&source=0
 可以获得输出：“Hello! How can I help you today?”
 
 ## 关于 API
-API 的请求要求三个参数并且缺一不可，分别是 `msg`、`usrid` 和 `source`。可以使用 `GET` 或者 `POST` 请求
+API 的请求要求三个参数并且缺一不可，分别是 `msg`、`usrid` 和 `source`。还有一个附加参数 `preset` 用来设置对话的预设，可以使用 `GET` 或者 `POST` 请求
 - `msg`：请求的正文内容。
 - `usrid`：确定上下文及用户身份所用的 ID。
 - `source`：请求的来源（为了安全和其他开发的需要）。
+- `preset`：设置对话的预设（可选，注意使用预设需要每次都带上预设参数）
+
 
 ## API 的一些特殊用法
 - 当 `msg`（正文部分）为 `clear` 时，清空当前 `usrid` 下的历史记录（记忆或者说上下文）。
