@@ -1,31 +1,38 @@
-## 这个项目不支持一键包，也将不会提供官方的一键包，未来会支持docker镜像
+## 注意
+本项目暂不支持提供一键包，也不会提供官方的一键包。未来会支持 Docker 镜像。
+
 ## 我们做了什么
-- 我们folk了一份chatglm6b源码
-- 我们进行了一些改编使其可以运行一个定制的api
+我们 fork 了一份 ChatGLM6B 源码，并进行了改编，使其可以运行一个定制的 API。
 
-## 什么是定制的api
-- 为了满足一些应用场景的需要，我们定制了一个api（原作者尚不清楚，可能是ChatGPT），可以使用简单的get请求与ChatGLM对话。
+## 什么是定制的 API？
+为了满足一些应用场景的需要，我们定制了一个 API（原作者尚不清楚，可能是 ChatGPT），可以使用简单的 GET 请求与 ChatGLM 进行对话。
 
-## 如何使用api
-- 首先部署python环境，要求版本大于3.10
-- 克隆本仓库并转入本仓库的目录
-- 安装requirements.txt中的依赖
+## 如何使用 API？
+1. 首先需要部署 Python 环境，版本要求大于 3.10。
+2. 克隆本仓库并转到本仓库的目录。
+3. 安装 requirements.txt 中的依赖：
+```
 pip install -r requirements.txt
-- 运行api文件，这需要至少13g的显存，在不启用量化模型的前提下
+```
+4. 运行 api_fp16.py 文件，需要至少 13GB 的显存，在不启用量化模型的前提下：
+```
 python api_fp16.py
-- 等待模型加载（下载）完毕，输出地址时即可使用
-- 使用get方式调用api，比如
-get https://api.chat.t4wefan.pub/chatglm?msg=hello&usrid=0&source=0
-可以获得输出“Hello! How can I help you today?”
+```
+5. 等待模型加载（下载）完毕，输出地址时即可使用。
+6. 使用 GET 方式调用 API，例如：
+```
+GET https://api.chat.t4wefan.pub/chatglm?msg=hello&usrid=0&source=0
+```
+可以获得输出：“Hello! How can I help you today?”
 
-## 关于api 
-- api的请求要求三个参数并且缺一不可，分别是 msg,usrid,source
-- msg 即为请求的正文内容
-- usrid 为确定上下文及用户身份所用的id
-- source 为请求的来源（为了安全和其他开发的需要）
+## 关于 API
+API 的请求要求三个参数并且缺一不可，分别是 `msg`、`usrid` 和 `source`。
+- `msg`：请求的正文内容。
+- `usrid`：确定上下文及用户身份所用的 ID。
+- `source`：请求的来源（为了安全和其他开发的需要）。
 
-## api的一些特殊用法
-- 当msg（正文部分）为clear时，清空当前usrid下的历史记录（记忆或者说上下文）
-- 当msg为ping时，将返回后端状态
-- 这个api可以用于koishi机器人的搭建
-- 如果使用autodl算力平台，在安装完依赖后启动api_autodl.py即可在autodl的自定义服务中使用api
+## API 的一些特殊用法
+- 当 `msg`（正文部分）为 `clear` 时，清空当前 `usrid` 下的历史记录（记忆或者说上下文）。
+- 当 `msg` 为 `ping` 时，将返回后端状态。
+- 这个 API 可以用于 koishi 机器人的搭建。
+- 如果使用 AutoDL 算力平台，在安装完依赖后启动 api_autodl.py 即可在 AutoDL 的自定义服务中使用 API。
