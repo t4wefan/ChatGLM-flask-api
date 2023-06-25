@@ -31,9 +31,9 @@ def main():
         prompt = request.args.get('msg')
         usrid = request.args.get('usrid')
         source = request.args.get('source')
-        temp = request.args.get('temp') if temp else 0.95
-        top_p = request.args.get('topp') if top_p else 0.7
-        preset = request.args.get('preset') if preset else ''
+        #temp = request.args.get('temp') if temp else 0.95
+        #top_p = request.args.get('topp') if top_p else 0.7
+        #preset = request.args.get('preset') if preset else ''
     
     if prompt == None:
         return '请提供内容'
