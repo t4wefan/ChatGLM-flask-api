@@ -1,6 +1,12 @@
 ## 注意
 本项目暂不支持提供一键包，也不会提供官方的一键包。未来会支持 Docker 镜像。
 
+## DEMO
+我制作了一个DEMO，单卡3090驱动的ChatGLM 6b对话模型
+```
+GET https://api.chat.t4wefan.pub/chatglm
+```
+
 ## 我们做了什么
 我们使用flask框架创建了并且定制了一个ChatGLM的api
 
