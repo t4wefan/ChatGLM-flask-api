@@ -1,7 +1,10 @@
-protobuf>=3.19.5,<3.20.1
+protobuf
 transformers
 icetk
 cpm_kernels
-torch>=1.10
+torch>=2.0
 gradio
 flask
+mdtex2html
+sentencepiece
+accelerate
