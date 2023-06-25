@@ -52,10 +52,10 @@ def main():
         print(f"usrid：{usrid},清空历史")
         return '已重置当前对话'
     
-    response, history[usrid] = model.chat(tokenizer, prompt, history=history[usrid], top_p=top_p, temprature=temp,)
+    response, history[usrid] = model.chat(tokenizer, prompt, history=history[usrid], )
     print(f"ChatGLM：{response}")
     return response
 
 if __name__ == '__main__':
-    print(f"欢迎使用 ChatGLM-6B API，可通过发送GET或POST请求到http://127.0.0.1:{port}/chatglm来调用。")
+    print(f"欢迎使用 ChatGLM-6B API，可通过发送GET请求到http://127.0.0.1:{port}/chatglm来调用。")
     app.run(host='0.0.0.0', port=port)
