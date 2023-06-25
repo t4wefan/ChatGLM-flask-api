@@ -53,7 +53,7 @@ def main():
         print(f"usrid：{usrid},清空历史")
         return '已重置当前对话'
     
-    response, history[usrid] = model.chat(tokenizer, prompt, history=history[usrid], )
+    response, history[usrid] = model.chat(tokenizer, prompt, history=history[usrid],max_length=max_length, )
     print(f"ChatGLM：{response}")
     return response
 
